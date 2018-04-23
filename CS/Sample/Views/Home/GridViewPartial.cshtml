@@ -1,0 +1,15 @@
+﻿@model List<Sample.Models.Person>
+@Html.DevExpress().GridView(settings => {
+    settings.Name = "grid";
+    settings.KeyFieldName = "PersonID";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+    settings.CommandColumn.Visible = true;
+    settings.CommandColumn.CustomButtons.Add(new GridViewCommandColumnCustomButton() { ID = "btnGetKey", Text = "Get Row Key" });
+    settings.ClientSideEvents.CustomButtonClick =
+        string.Format("function(s, e) {{ CustomButtonClick(s, e, '{0}'); }}", Url.Action("About", "Home"));
+
+    settings.Columns.Add("FirstName");
+    settings.Columns.Add("MiddleName");
+    settings.Columns.Add("LastName");
+}).Bind(Model).GetHtml()
