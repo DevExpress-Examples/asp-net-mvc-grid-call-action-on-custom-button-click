@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/Sample/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/Sample/Controllers/HomeController.vb))
+* [About.cshtml](./CS/Sample/Views/Home/About.cshtml)
+* [GridViewPartial.cshtml](./CS/Sample/Views/Home/GridViewPartial.cshtml)
+* **[Index.cshtml](./CS/Sample/Views/Home/Index.cshtml)**
+<!-- default file list end -->
 # How to call an Action method via a custom button and pass a row's key as a parameter
 
 
