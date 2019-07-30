@@ -8,7 +8,7 @@
 <!-- default file list end -->
 # How to call an Action method via a custom button and pass a row's key as a parameter
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e4827)**
+**[[Run Online]](https://codecentral.devexpress.com/e4827/)**
 <!-- run online end -->
 
 
