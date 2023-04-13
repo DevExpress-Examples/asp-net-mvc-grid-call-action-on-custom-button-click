@@ -44,14 +44,17 @@ This come sample demonstrates how to add a custom button to the grid and .
     ```
 
 1. Add the retrieved keyValue parameter to the specified destination Url.  
-    https://github.com/DevExpress-Examples/how-to-call-an-action-method-via-a-custom-button-and-pass-a-rows-key-as-a-parameter-e4827/blob/832d1141d4af920ef7fbf16a04cb6cdb0c7c4937/CS/Sample/Views/Home/Index.cshtml#L8-L9
 
-1. Set the `window.location.href` property to navigate to the destination URL.  
-    https://github.com/DevExpress-Examples/how-to-call-an-action-method-via-a-custom-button-and-pass-a-rows-key-as-a-parameter-e4827/blob/832d1141d4af920ef7fbf16a04cb6cdb0c7c4937/CS/Sample/Views/Home/Index.cshtml#L11
+https://github.com/DevExpress-Examples/how-to-call-an-action-method-via-a-custom-button-and-pass-a-rows-key-as-a-parameter-e4827/blob/832d1141d4af920ef7fbf16a04cb6cdb0c7c4937/CS/Sample/Views/Home/Index.cshtml#L8-L9
+
+1. Set the `window.location.href` property to navigate to the destination URL.
+
+https://github.com/DevExpress-Examples/how-to-call-an-action-method-via-a-custom-button-and-pass-a-rows-key-as-a-parameter-e4827/blob/832d1141d4af920ef7fbf16a04cb6cdb0c7c4937/CS/Sample/Views/Home/Index.cshtml#L11
 
 
 1. Use the Action's parameter to retrieve the passed key value.  
-    https://github.com/DevExpress-Examples/how-to-call-an-action-method-via-a-custom-button-and-pass-a-rows-key-as-a-parameter-e4827/blob/832d1141d4af920ef7fbf16a04cb6cdb0c7c4937/CS/Sample/Controllers/HomeController.cs#L18-L21
+
+https://github.com/DevExpress-Examples/how-to-call-an-action-method-via-a-custom-button-and-pass-a-rows-key-as-a-parameter-e4827/blob/832d1141d4af920ef7fbf16a04cb6cdb0c7c4937/CS/Sample/Controllers/HomeController.cs#L18-L21
 
 ## Files to Review
 
