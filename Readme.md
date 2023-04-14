@@ -3,28 +3,62 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E4827)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [HomeController.cs](./CS/Sample/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/Sample/Controllers/HomeController.vb))
-* [About.cshtml](./CS/Sample/Views/Home/About.cshtml)
-* [GridViewPartial.cshtml](./CS/Sample/Views/Home/GridViewPartial.cshtml)
-* **[Index.cshtml](./CS/Sample/Views/Home/Index.cshtml)**
-<!-- default file list end -->
-# How to call an Action method via a custom button and pass a row's key as a parameter
+# Grid View for ASP.NET MVC - How to call an Action method on a custom button click
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/e4827/)**
 <!-- run online end -->
 
+This example demonstrates how to call an Action method when a custom button is clicked and obtain the clicked row's key value in the Action.
 
-<p>- Define a custom button via the <a href="http://documentation.devexpress.com/#AspNet/DevExpressWebASPxGridViewGridViewCommandColumn_CustomButtonstopic"><u>GridViewSettings.CommandColumn.CustomButtons</u></a> collection;<br />
-- Customize the client-side CustomButtonClick event handler via the <a href="http://documentation.devexpress.com/#AspNet/DevExpressWebASPxGridViewScriptsASPxClientGridView_CustomButtonClicktopic"><u>GridViewSettings.ClientSideEvents.CustomButtonClick</u></a> property: pass the destination Url/Address (generated via the <strong>Url.Action</strong> helper method) as a parameter;<br />
-- Handle the client-side <strong>ASPxClientGridView.CustomButtonClick</strong> event;<br />
-- Retrieve the clicked row's keyValue via the client-side <a href="http://documentation.devexpress.com/#AspNet/DevExpressWebASPxGridViewScriptsASPxClientGridView_GetRowKeytopic"><u>ASPxClientGridView.GetRowKey</u></a> method. Use the EventArgs <strong>e.visibleIndex</strong> property as a parameter;<br />
-- Add the retrieved keyValue parameter to the specified destination Url;<br />
-- Navigate to the specified Url by changing the <strong>window.location.href</strong> property;<br />
-- Retrieve the passed keyValue via an argument of the invoked Action's parameter.</p>
+![Grid](grid.png)
 
-<br/>
+1.  Add a custom button to the [CustomButtons](https://docs.devexpress.com/AspNet/DevExpress.Web.GridViewCommandColumn.CustomButtons) collection.
+
+    ```cs
+    settings.CommandColumn.CustomButtons.Add(new GridViewCommandColumnCustomButton() { ID = "btnGetKey", Text = "Get Row Key" });
+    ```
+
+1. Use the [GridViewClientSideEvents.CustomButtonClick](https://docs.devexpress.com/AspNet/DevExpress.Web.GridViewClientSideEvents.CustomButtonClick) property to assign a JavaScript function to the [CustomButtonClick](https://docs.devexpress.com/AspNet/js-ASPxClientGridView.CustomButtonClick) event. 
+
+    Call the [Url.Action](https://learn.microsoft.com/ru-ru/dotnet/api/system.web.mvc.urlhelper.action) method to generate a URL to an action method and send the resulting string to the `CustomButtonClick` function as a parameter.
+
+    ```cs
+    settings.ClientSideEvents.CustomButtonClick =
+        string.Format("function(s, e) {{ CustomButtonClick(s, e, '{0}'); }}", Url.Action("About", "Home"));
+    ```
+
+1. Implement the `CustomButtonClick` JavaScript function.
+
+    * Use the [GetRowKey](https://docs.devexpress.com/AspNet/js-ASPxClientGridView.GetRowKey(visibleIndex)) method to get the clicked row's key value. 
+    * Add the key value parameter to the specified destination URL.
+    * Specify the `window.location.href` property to navigate to the destination URL.
+
+    ```js
+        function CustomButtonClick(s, e, url) {
+            var key = s.GetRowKey(e.visibleIndex);
+            if (e.buttonID === "btnGetKey") {
+                var destUrl = url + "/" + key;
+                window.location.href = destUrl;
+            }
+        }
+    ```
+
+1. Use the Action's parameter to retrieve the passed key value.  
+
+    ```cs
+    public ActionResult About(int id) { 
+        ViewData["Key"] = id; 
+        return View(); 
+    } 
+    ```
+
+## Files to Review
+
+* [GridViewPartial.cshtml](./CS/Sample/Views/Home/GridViewPartial.cshtml) (VB: [GridViewPartial.vbhtml](./VB/Sample/Views/Home/GridViewPartial.vbhtml))
+* [Index.cshtml](./CS/Sample/Views/Home/Index.cshtml) (VB: [Index.vbhtml](./VB/Sample/Views/Home/Index.vbhtml))
+* [HomeController.cs](./CS/Sample/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/Sample/Controllers/HomeController.vb))
+* [About.cshtml](./CS/Sample/Views/Home/About.cshtml) (VB: [About.vbhtml](./VB/Sample/Views/Home/About.vbhtml))
+
 
 
