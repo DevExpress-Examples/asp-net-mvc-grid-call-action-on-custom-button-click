@@ -21,7 +21,7 @@ This example demonstrates how to call an Action method when a custom button is c
 
 1. Use the [GridViewClientSideEvents.CustomButtonClick](https://docs.devexpress.com/AspNet/DevExpress.Web.GridViewClientSideEvents.CustomButtonClick) property to assign a JavaScript function to the [CustomButtonClick](https://docs.devexpress.com/AspNet/js-ASPxClientGridView.CustomButtonClick) event. 
 
-    Call the [Url.Action](https://learn.microsoft.com/ru-ru/dotnet/api/system.web.mvc.urlhelper.action) method to generate a URL to an action method and send the result string to the `CustomButtonClick` function as a parameter.
+    Call the [Url.Action](https://learn.microsoft.com/ru-ru/dotnet/api/system.web.mvc.urlhelper.action) method to generate a URL to an action method and send the resulting string to the `CustomButtonClick` function as a parameter.
 
     ```cs
     settings.ClientSideEvents.CustomButtonClick =
@@ -31,7 +31,7 @@ This example demonstrates how to call an Action method when a custom button is c
 1. Implement the `CustomButtonClick` JavaScript function.
 
     * Use the [GetRowKey](https://docs.devexpress.com/AspNet/js-ASPxClientGridView.GetRowKey(visibleIndex)) method to get the clicked row's key value. 
-    * Add the key value parameter to the specified destination Url.
+    * Add the key value parameter to the specified destination URL.
     * Specify the `window.location.href` property to navigate to the destination URL.
 
     ```js
