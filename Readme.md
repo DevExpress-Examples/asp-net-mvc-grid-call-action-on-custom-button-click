@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Grid View for ASP.NET MVC - How to call an Action method on a custom button click
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128551267/)**
-<!-- run online end -->
 
 This example demonstrates how to call an Action method when a custom button is clicked and obtain the clicked row's key value in the Action.
 
