@@ -12,9 +12,6 @@
 * **[Index.cshtml](./CS/Sample/Views/Home/Index.cshtml)**
 <!-- default file list end -->
 # How to call an Action method via a custom button and pass a row's key as a parameter
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128551267/)**
-<!-- run online end -->
 
 
 <p>- Define a custom button via the <a href="http://documentation.devexpress.com/#AspNet/DevExpressWebASPxGridViewGridViewCommandColumn_CustomButtonstopic"><u>GridViewSettings.CommandColumn.CustomButtons</u></a> collection;<br />
