@@ -166,19 +166,19 @@
     <Compile Include="Properties\AssemblyInfo.vb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\_ViewStart.cshtml" />
+    <None Include="Views\_ViewStart.vbhtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layout.vbhtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\About.cshtml" />
+    <None Include="Views\Home\About.vbhtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\GridViewPartial.cshtml" />
+    <None Include="Views\Home\GridViewPartial.vbhtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
