@@ -1,4 +1,4 @@
-@model List<Sample.Models.Person>
+@ModelType List(Of Sample.Models.Person)
 <script type="text/javascript">
     function CustomButtonClick(s, e, url) {
         var key = s.GetRowKey(e.visibleIndex);
@@ -11,5 +11,5 @@
             window.location.href = destUrl;
         }
     }
-</script>           
+</script>
 @Html.Partial("GridViewPartial", Model)

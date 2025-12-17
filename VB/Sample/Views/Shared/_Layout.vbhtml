@@ -6,11 +6,11 @@
     <script src="@Url.Content("~/Scripts/MicrosoftAjax.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/MicrosoftMvcValidation.js")" type="text/javascript"></script>
     @Html.DevExpress().GetStyleSheets(
-        new StyleSheet { ExtensionSuite = ExtensionSuite.All }
-    )
+                    New StyleSheet With {.ExtensionSuite = ExtensionSuite.All}
+                                        )
     @Html.DevExpress().GetScripts(
-        new Script { ExtensionSuite = ExtensionSuite.All }
-    )
+                    New Script With {.ExtensionSuite = ExtensionSuite.All}
+                )
 </head>
 <body>
     @RenderBody()
